@@ -32,6 +32,12 @@ pub fn main() !void {
                 continue;
             }
 
+            // Check for exit command
+            if (std.mem.eql(u8, trimmed_input, "exit")) {
+                try stdout.print("👋 Bye bye! Thanks for playing! See you next time! 🎮✨\n", .{});
+                break;
+            }
+
             // Parse the input string to a number
             const guess = std.fmt.parseInt(u8, trimmed_input, 10) catch {
                 try stdout.print("Please enter a valid number between 1-100\n", .{});
@@ -44,14 +50,14 @@ pub fn main() !void {
                 continue;
             }
 
-            // Compare the numbers
-            if (guess == number_to_guess) {
-                try stdout.print("🎉 You win! The number was {d}\n", .{number_to_guess});
-                break; // Exit the game
-            } else if (guess < number_to_guess) {
-                try stdout.print("Too low! Try again.\n", .{});
-            } else {
-                try stdout.print("Too high! Try again.\n", .{});
+            // Compare the input
+            switch (std.math.order(guess, number_to_guess)) {
+                .lt => try stdout.print("📈 Too low! Try higher! ⬆️\n", .{}),
+                .gt => try stdout.print("📉 Too high! Try lower! ⬇️\n", .{}),
+                .eq => {
+                    try stdout.print("🎉🎊 WINNER! 🏆 The number was {d}! 🎯\n", .{number_to_guess});
+                    break;
+                },
             }
         }
     }
