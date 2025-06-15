@@ -12,7 +12,6 @@ This is a command-line guessing game that generates a random number between 1 an
 - Input validation (ensures valid numbers within range)
 - Helpful feedback for each guess
 - Simple command-line interface
-- Debug mode showing the target number
 
 ## Prerequisites
 
@@ -56,13 +55,12 @@ zig build
 
 ```
 Goal: Guess the number I'm thinking of (1-100)
-Debug: the number is 42
 > 50
-Too high! Try again.
+📉 Too high! Try lower! ⬇️
 > 25
-Too low! Try again.
+📈 Too low! Try higher! ⬆️
 > 42
-🎉 You win! The number was 42
+🎉🎊 WINNER! 🏆 The number was 42! 🎯
 ```
 
 ## Testing
