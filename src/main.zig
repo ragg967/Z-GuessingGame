@@ -15,7 +15,6 @@ pub fn main() !void {
 
     // initial gratings
     try stdout.print("\nGoal: Guess the number I'm thinking of (1-100)\n", .{});
-    try stdout.print("Debug: the number is {d}\n", .{number_to_guess});
 
     // mem buffer
     var buffer: [256]u8 = undefined;
