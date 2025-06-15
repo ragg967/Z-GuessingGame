@@ -4,7 +4,7 @@ A simple number guessing game written in Zig where you try to guess a randomly g
 
 ## Description
 
-This is a command-line guessing game that generates a random number between 1 and 100, and challenges you to guess it. The game provides feedback after each guess, telling you whether your guess is too high, too low, or correct.
+This is a command-line guessing game that generates a random number between 1 and 100, and challenges you to guess it. The game provides feedback after each guess, telling you whether your guess is too high, too low, or correct. You can exit the game prematurely with the 'exit' command.
 
 ## Features
 
@@ -52,7 +52,7 @@ zig build
    - Correct (you win!)
 5. Keep guessing until you find the correct number
 
-## Example Gameplay
+## Example Game play
 
 ```
 Goal: Guess the number I'm thinking of (1-100)
